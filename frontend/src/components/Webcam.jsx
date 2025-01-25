@@ -60,19 +60,8 @@ const Webcam = () => {
         muted
       ></video>
 
-      <button className='object-center'
-        onClick={handleNavigate}
-        style={{
-          marginTop: "10px",
-          padding: "10px 20px",
-          fontSize: "16px",
-          borderRadius: "8px",
-          backgroundColor: "#007BFF",
-          color: "#FFF",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
+      <button className="px-3 py-3 border border-gray-200 text-white font-medium rounded-2xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-200 transition-all duration-200 ease-in-out"
+        onClick={handleNavigate}>
         Go!
       </button>
 

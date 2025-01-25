@@ -14,7 +14,7 @@ function Playlist() {
             <h1>Mood: {}</h1>
 
             <button 
-            className='text-white'
+            className="px-3 py-3 border border-gray-200 text-white font-medium rounded-2xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-200 transition-all duration-200 ease-in-out"
             onClick={handleNavigate}
             >Again</button>
         </div>
