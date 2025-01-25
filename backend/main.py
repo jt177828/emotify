@@ -1,5 +1,34 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+import os
+import google.generativeai as genai
+
+from scripts import face_to_emotion
+
+genai.configure(api_key=os.environ["AIzaSyAVudME3VBZw-IEKo_HGyWypE6GqGd3oJs"])
+
+# Create the model
+generation_config = {
+  "temperature": 0.15,
+  "top_p": 0.95,
+  "top_k": 40,
+  "max_output_tokens": 8192,
+  "response_mime_type": "text/plain",
+}
+
+model = genai.GenerativeModel(
+  model_name="gemini-2.0-flash-exp",
+  generation_config=generation_config,
+)
+
+chat_session = model.start_chat(
+  history=[
+  ]
+)
+
+response = chat_session.send_message("INSERT_INPUT_HERE")
+
+print(response.text)
 
 # Initialize FastAPI application
 app = FastAPI(
