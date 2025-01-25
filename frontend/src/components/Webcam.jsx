@@ -1,9 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Webcam = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [capturedImage, setCapturedImage] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getMedia = async () => {
@@ -43,21 +47,21 @@ const Webcam = () => {
     }
   };
 
+  const handleNavigate = () => {
+    navigate("/playlist");
+    captureImage
+    };
+
   return (
     <div>
-      {/* Webcam video */}
       <video
         ref={videoRef}
         autoPlay
         muted
       ></video>
 
-      {/* Hidden canvas for capturing the image */}
-      <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
-
-      {/* Button to take a picture */}
       <button className='object-center'
-        onClick={captureImage}
+        onClick={handleNavigate}
         style={{
           marginTop: "10px",
           padding: "10px 20px",
@@ -69,7 +73,7 @@ const Webcam = () => {
           cursor: "pointer",
         }}
       >
-        Take Picture
+        Go!
       </button>
 
     </div>

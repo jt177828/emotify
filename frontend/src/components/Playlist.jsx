@@ -1,7 +1,22 @@
+import { useNavigate } from "react-router-dom";
+
 function Playlist() {
-    return(
+    const mood = "";
+
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate("/");
+      };
+    
+    return (
         <div>
-            <h1>Playist</h1>
+            <h1>Mood: {}</h1>
+
+            <button 
+            className='text-white'
+            onClick={handleNavigate}
+            >Again</button>
         </div>
     );
 }
