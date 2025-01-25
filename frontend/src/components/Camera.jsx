@@ -1,7 +1,9 @@
 function Camera() {
     return (
         <>
-        <h1 className="">Emotify</h1>
+        <h1 className="">Camera</h1>
         </>
     )
 }
+
+export default Camera;

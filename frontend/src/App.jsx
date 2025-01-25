@@ -1,11 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Layout from './Layout'
+import Camera from './components/Camera'
+import Playlist from './components/Playlist'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
 
   return (
-    <h1>Emotify</h1>
+      <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Camera />} />
+        <Route path="playlist" element={<Playlist />} />
+        </Route>
+      </Routes>
     )
 }
 
