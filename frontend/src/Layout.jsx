@@ -5,8 +5,8 @@ const Layout = () => {
   return (
     <div className="bg-black flex flex-col justify-center items-center">
       <Link to="/" className="flex justify-center items-center">
-        <img src={Logo} alt="logo" className="w-10 h-10" />
-        <h1 className="text-white justify-center text-7xl">Emotify</h1>
+        <img src={Logo} alt="logo" className="w-20 h-20" />
+        <h1 className="text-white justify-center text-7xl">EmoTify.</h1>
       </Link>
       <Outlet />
     </div>
