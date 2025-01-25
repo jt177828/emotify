@@ -1,7 +1,9 @@
+import Webcam from './Webcam'
+
 function Camera() {
     return (
         <>
-        <h1 className="">Camera</h1>
+        <Webcam></Webcam>
         </>
     )
 }

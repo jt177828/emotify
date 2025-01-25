@@ -11,7 +11,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Camera />} />
-        <Route path="playlist" element={<Playlist />} />
+        <Route path="/playlist" element={<Playlist />} />
         </Route>
       </Routes>
     )
