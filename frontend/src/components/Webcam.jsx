@@ -54,13 +54,13 @@ const Webcam = () => {
 
   return (
     <div>
-      <video
+      <video className="rounded-3xl"
         ref={videoRef}
         autoPlay
         muted
       ></video>
 
-      <button className="px-3 py-3 border border-gray-200 text-white font-medium rounded-2xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-200 transition-all duration-200 ease-in-out"
+      <button className="px-3 py-3 border border-gray-200 text-white font-medium rounded-2xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-200 transition-all duration-200 ease-in-out align-center  "
         onClick={handleNavigate}>
         Go!
       </button>
