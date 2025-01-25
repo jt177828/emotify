@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 
 const Webcam = () => {
   const videoRef = useRef(null);
@@ -12,7 +12,9 @@ const Webcam = () => {
   useEffect(() => {
     const getMedia = async () => {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+        });
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
@@ -49,8 +51,31 @@ const Webcam = () => {
 
   const handleNavigate = () => {
     navigate("/playlist");
-    captureImage
-    };
+    captureImage;
+  };
+
+  const uploadImage = async () => {
+    if (!capturedImage) return;
+
+    try {
+      const blob = await fetch(capturedImage).then((res) => res.blob());
+      const formData = new FormData();
+      formData.append("image", blob, "captured_image.png");
+
+      const response = await axios.post(
+        "http://127.0.0.1:5000/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Image uploaded successfully:", response.data);
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
 
   return (
     <div>
@@ -64,7 +89,6 @@ const Webcam = () => {
         onClick={handleNavigate}>
         Go!
       </button>
-
     </div>
   );
 };
