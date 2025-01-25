@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 
   return (
-    <div className='bg-black'>
+    <div className='-color-background'>
       
         <Routes>
         <Route path="/" element={<Layout />}>

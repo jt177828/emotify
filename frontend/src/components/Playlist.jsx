@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Playlist() {
     const mood = "";
+    const [playlist, setPlaylist] = useState(null)
 
     const navigate = useNavigate();
 

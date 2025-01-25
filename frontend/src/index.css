@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: "#121434";
+}
+
 @font-face {
   font-family: "CustomFont";
   src: url("../assets/fonts/your-font-file.ttf") format("truetype");
